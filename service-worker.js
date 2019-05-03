@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/helloreact/precache-manifest.d9246085f1bb521f618cb34d4977a6a3.js"
+  "/helloreact/precache-manifest.b82a58f87bc562d632164b761f5f2aac.js"
 );
 
 self.addEventListener('message', (event) => {
