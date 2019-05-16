@@ -1,0 +1,24 @@
+ul { 
+  padding-left: 20px;
+  list-style-position : inherit;
+  list-style-type : none;
+  border: 1px solid gray; 
+  text-align: left;
+}
+
+.MenuItem { 
+  position: relative;
+  cursor: cell;
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 10px; 
+}
+.MenuItem:hover{
+  background-color: blueviolet;
+}
+.MenuItem:active { 
+  background-color: red;
+}
+
+
+
