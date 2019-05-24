@@ -4,15 +4,18 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 import reducers from './reducers';
+import thunk from 'redux-thunk'; 
 
-const store = createStore(reducers);
-
+const store = createStore(reducers 
+        , applyMiddleware(thunk) );
+        
+console.log("===========state start");
 console.log(store.getState() );
-
+console.log("===========state end");
 ReactDOM.render(
     <Provider store={store}>
         <App />

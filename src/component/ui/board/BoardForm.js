@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { board_save } from './../../../reducers/Board_Reducer';
-
+import { firebase_board_save  } from './../../../reducers/Board_Reducer'; 
 
 class BoardForm extends Component {
     state = {};
@@ -14,12 +13,13 @@ class BoardForm extends Component {
     };
 
     handleChange = (e) => {
+        console.log("handleChange  [e.target.name]:" +  [e.target.name] +"/e.target.value:" + e.target.value); 
         this.setState({ [e.target.name]: e.target.value });
     }
-
+ 
     handleSave = () => {
-        this.props.dispatch(board_save(this.state));
-        this.setState(this.initialSelectedBoard);
+        this.props.dispatch(firebase_board_save(this.state));
+        this.setState (this.initialSelectedBoard);
     }
 
     componentWillReceiveProps(nextProps) {
@@ -37,7 +37,7 @@ class BoardForm extends Component {
     }
 }
 
-let mapStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return { selectedBoard: state.selectedBoard };
 }
 

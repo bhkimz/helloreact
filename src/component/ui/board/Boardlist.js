@@ -3,37 +3,12 @@ import { connect } from 'react-redux';
 
 import BoardItem from './BoardItem';
 import BoardForm from './BoardForm';
+import { firebase_board_list } from './../../../reducers/Board_Reducer';
 
 class Boardlist extends Component {
-    // handleSaveData = (data) => {
-    //     let boards = this.state.boards;
-    //     if (data.brdno === null || data.brdno === '' || data.brdno === undefined) { // new : Insert 
-    //         console.log("1 pre:" + this.state.maxNo);
-    //         this.setState({
-    //             maxNo: this.state.maxNo + 1,
-    //             boards: boards.concat({ brdno: this.state.maxNo, brddate: new Date(), ...data })
-    //         });
-
-    //         console.log("2 afer:" + this.state.maxNo);
-    //     } else {   // Update 
-    //         this.setState({
-    //             boards: boards.map(row => data.brdno === row.brdno ? { ...data } : row)
-    //         })
-    //     }
-    // }
-
-    // handleRemove = (brdno) => {
-    //     this.setState({
-    //         boards: this.state.boards.filter(
-    //             row => row.brdno !== brdno)
-    //     })
-    // }
-
-    // handleSelectRow = (row) => {
-    //     this.setState({
-    //         selectedBoard: row
-    //     });
-    // }
+    componentDidMount() {
+        this.props.dispatch(firebase_board_list());
+    }
 
     render() {
         const { boards } = this.props;
@@ -48,13 +23,13 @@ class Boardlist extends Component {
                             <td width="50">No.</td>
                             <td width="300">Title</td>
                             <td width="100">Name</td>
-                            <td width="100">Date</td> 
-                            <td width="100">Del</td> 
+                            <td width="100">Date</td>
+                            <td width="100">Del</td>
                         </tr>
                         {
-                            boards.map(row => 
-                                ( <BoardItem key={row.brdno} row={row} />))
-                        } 
+                            boards.map((row, inx) =>
+                                (<BoardItem key={inx} inx={inx+1} row={row}  />))
+                        }
                     </tbody>
                 </table>
             </div>
@@ -84,7 +59,8 @@ class Boardlist extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        boards: state.Board_Reducer.boards
+        boards: state.Board_Reducer.boards,
+        selectedBoard: state.Board_Reducer.selectedBoard
     };
 }
 

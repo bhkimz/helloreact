@@ -1,36 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-import { board_read, board_remove } from './../../../reducers/Board_Reducer';
+import { board_read, firebase_board_remove } from './../../../reducers/Board_Reducer';
 
-class BoardItem extends Component {
-    // handleRemove = () => {
-    //     const { row, onRemove } = this.props;
-    //     onRemove(row.brdno);
-    // }
+const BoardItem = ({row, inx, board_read, firebase_board_remove}) => (
+    <tr>
+        <td>{inx}</td>
+        <td><a onClick={() => board_read(row.brdno)}> {row.brdtitle} </a></td>
+        <td>{row.brdwriter}</td>
+        <td>{row.brddate}</td> 
+        <td><a onClick={() => { firebase_board_remove(row.brdno) }}>X</a></td>
+    </tr>
+);
 
-    // handleSelectRow = () => {
-    //     const { row, onSelectRow } = this.props;
-    //     onSelectRow(row);
-    // }
+const mapDispatchToProps = dispatch => ({
+    board_read: brdno => dispatch(board_read(brdno)),
+    firebase_board_remove: brdno => dispatch(firebase_board_remove(brdno))
+})
 
-    handleUpdateForm = (brdno) => {
-        this.props.dispatch(board_read(brdno));
-    }
 
-    render() {
-        const row = this.props.row;
-
-        return (
-            <tr>
-                <td>{row.brdno}</td>
-                <td><a onClick={ () => this.handleUpdateForm(row.brdno) }> {row.brdtitle} </a></td>
-                <td>{row.brdwriter}</td>
-                <td>{row.brddate.toLocaleDateString('ko-KR')}</td> 
-                <td><a onClick={() => { this.props.dispatch(board_remove(row.brdno)) }}>X</a></td> 
-            </tr>
-        );
-    }
-}
-
-export default connect()(BoardItem) 
+export default connect(null, mapDispatchToProps)(BoardItem)
