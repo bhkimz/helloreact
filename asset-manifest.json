@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/helloreact/static/css/main.8bfc353b.chunk.css",
-    "main.js": "/helloreact/static/js/main.7c72e343.chunk.js",
-    "main.js.map": "/helloreact/static/js/main.7c72e343.chunk.js.map",
+    "main.js": "/helloreact/static/js/main.015fc5d4.chunk.js",
+    "main.js.map": "/helloreact/static/js/main.015fc5d4.chunk.js.map",
     "runtime~main.js": "/helloreact/static/js/runtime~main.166ef739.js",
     "runtime~main.js.map": "/helloreact/static/js/runtime~main.166ef739.js.map",
-    "static/js/2.a6692d5a.chunk.js": "/helloreact/static/js/2.a6692d5a.chunk.js",
-    "static/js/2.a6692d5a.chunk.js.map": "/helloreact/static/js/2.a6692d5a.chunk.js.map",
+    "static/js/2.fadb10b1.chunk.js": "/helloreact/static/js/2.fadb10b1.chunk.js",
+    "static/js/2.fadb10b1.chunk.js.map": "/helloreact/static/js/2.fadb10b1.chunk.js.map",
     "index.html": "/helloreact/index.html",
-    "precache-manifest.54ca96775c51d7263ef389a6f1dcb113.js": "/helloreact/precache-manifest.54ca96775c51d7263ef389a6f1dcb113.js",
+    "precache-manifest.595ac0575e69ecd7d1388b7cb625c823.js": "/helloreact/precache-manifest.595ac0575e69ecd7d1388b7cb625c823.js",
     "service-worker.js": "/helloreact/service-worker.js",
     "static/css/main.8bfc353b.chunk.css.map": "/helloreact/static/css/main.8bfc353b.chunk.css.map"
   }
